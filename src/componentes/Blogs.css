@@ -1,0 +1,16 @@
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.blog-grid .about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blog-grid .btn-small {
+  margin-top: auto;
+}

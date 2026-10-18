@@ -1,0 +1,516 @@
+.container {
+    width: min(1120px, 92%);
+    margin-inline: auto
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(12, 15, 21, .96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #252b36
+}
+
+.nav-container {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    white-space: nowrap
+}
+
+.logo span,
+.hero-content h1 span {
+    color: #35ed11
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.nav-links a {
+    font-size: .93rem;
+    color: #e3e7ec;
+    transition: color .2s
+}
+
+.nav-links a:hover,
+.section-heading>a:hover {
+    color: #35ed11
+}
+
+.nav-cart {
+    border: 1px solid #35ed11;
+    border-radius: 8px;
+    padding: 8px 12px
+}
+
+.nav-cart b {
+    color: #35ed11
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid #424a55;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 1.3rem
+}
+
+.hero-banner {
+    min-height: 460px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 36px;
+    padding: 52px max(4%, calc((100% - 1120px)/2));
+    background: radial-gradient(circle at 80% 50%, #243b0f 0%, #0b0d12 60%);
+    overflow: hidden
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 560px
+}
+
+.eyebrow {
+    color: #35ed11;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px
+}
+
+.hero-content>p:not(.eyebrow) {
+    font-size: 1.1rem;
+    max-width: 520px
+}
+
+.hero-art img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid #35402e;
+    box-shadow: 0 20px 70px #0008
+}
+
+.btn,
+.btn-small {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: #35ed11;
+    color: #0a0d0b;
+    border: 1px solid #35ed11;
+    border-radius: 8px;
+    padding: 11px 18px;
+    font-weight: 800;
+    transition: transform .2s, filter .2s
+}
+
+.btn {
+    margin-top: 12px
+}
+
+.btn-small {
+    font-size: .85rem;
+    padding: 9px 12px
+}
+
+.btn:hover,
+.btn-small:hover {
+    filter: brightness(.9);
+    transform: translateY(-1px)
+}
+
+.btn-outline {
+    background: transparent;
+    color: #35ed11
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #f4f4f4;
+    border-color: #59616c;
+    margin-left: 8px
+}
+
+.section {
+    padding-top: 58px;
+    padding-bottom: 64px
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px
+}
+
+.section-heading h2 {
+    margin-bottom: 0
+}
+
+.section-heading>a {
+    color: #35ed11
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 22px;
+    margin-top: 25px
+}
+
+.brands {
+    background: #11151d;
+    padding: 35px 0;
+    text-align: center;
+    border-block: 1px solid #252b36
+}
+
+.brand-list {
+    display: flex;
+    justify-content: center;
+    gap: clamp(20px, 5vw, 55px);
+    flex-wrap: wrap;
+    font-weight: 900;
+    color: #b9c0ca;
+    margin-top: 18px
+}
+
+.site-footer {
+    background: #0b0d12d9;
+    border-top: 1px solid #252b36;
+    padding: 30px 0
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap
+}
+
+.footer-inner p,
+.footer-inner small {
+    margin: 0;
+    color: #9ca3af
+}
+
+.form-section {
+    padding: 60px 0 80px;
+    display: flex;
+    justify-content: center
+}
+
+.form-card,
+.about-card {
+    background: #151a22;
+    border: 1px solid #292f39;
+    border-radius: 14px;
+    padding: clamp(22px, 4vw, 36px);
+    color: white
+}
+
+.form-card {
+    width: min(540px, 100%)
+}
+
+.form-card h1 {
+    font-size: 2.3rem
+}
+
+.form-card label {
+    display: block;
+    margin: 16px 0 0;
+    color: #e5e7eb;
+    font-weight: 600
+}
+
+.form-card input,
+.form-card textarea,
+.search-input {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    border: 1px solid #3a424f;
+    background: #0d1118;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    outline: none
+}
+
+.form-card input:focus,
+.form-card textarea:focus,
+.search-input:focus {
+    border-color: #35ed11;
+    box-shadow: 0 0 0 2px #35ed1122
+}
+
+.form-card .btn {
+    width: 100%;
+    margin-top: 22px
+}
+
+.form-message {
+    margin: 16px 0 0;
+    padding: 10px;
+    border-radius: 8px
+}
+
+.success {
+    background: #14351a;
+    color: #a5ff9a
+}
+
+.error {
+    background: #421e24;
+    color: #ffb8bf
+}
+
+.form-note {
+    font-size: .9rem;
+    margin-top: 16px
+}
+
+.form-note a {
+    color: #35ed11
+}
+
+.search-input {
+    max-width: 450px;
+    margin: 24px 0
+}
+
+.empty-state {
+    text-align: center;
+    padding: 55px 20px;
+    background: #151a22;
+    border: 1px solid #292f39;
+    border-radius: 14px
+}
+
+.cart-list {
+    margin-top: 28px
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #303743
+}
+
+.cart-item h3 {
+    margin: 0;
+    color: #fff
+}
+
+.cart-item p {
+    margin: 4px 0 0
+}
+
+.cart-item>strong {
+    white-space: nowrap
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.quantity button {
+    background: #252b36;
+    color: #fff;
+    border: 1px solid #414a57;
+    border-radius: 6px;
+    width: 32px;
+    height: 32px
+}
+
+.remove-btn {
+    border: 0;
+    background: none;
+    color: #ff8c8c
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 25px
+}
+
+.cart-summary h2 {
+    font-size: 1.5rem
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+    margin-top: 24px
+}
+
+.detail>img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px
+}
+
+.detail h2 {
+    color: #35ed11
+}
+
+.blog-grid,
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 25px
+}
+
+.blog-grid .about-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.blog-grid .btn-small {
+    margin-top: auto
+}
+
+.article {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 32px;
+    background: #151a22;
+    border: 1px solid #292f39;
+    border-radius: 14px
+}
+
+.article p {
+    font-size: 1.08rem
+}
+
+.admin-grid a:hover {
+    border-color: #35ed11
+}
+
+.lead {
+    font-size: 1.1rem
+}
+
+@media(max-width:850px) {
+    .menu-toggle {
+        display: block
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        padding: 18px 4%;
+        background: #0d1118;
+        border-bottom: 1px solid #303743;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px
+    }
+
+    .nav-links.abierto {
+        display: flex
+    }
+
+    .nav-links a {
+        padding: 6px 0
+    }
+
+    .hero-banner {
+        grid-template-columns: 1fr;
+        padding: 48px 4%;
+        gap: 26px
+    }
+
+    .hero-art img {
+        height: 250px
+    }
+
+    .detail {
+        grid-template-columns: 1fr
+    }
+
+    .detail>img {
+        max-height: 320px
+    }
+
+    .cart-item {
+        flex-wrap: wrap
+    }
+
+    .cart-item>div:first-child {
+        flex: 1 1 55%
+    }
+}
+
+@media(max-width:520px) {
+    .section {
+        padding-top: 40px;
+        padding-bottom: 45px
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .brand-list {
+        gap: 18px
+    }
+
+    .cart-item {
+        gap: 12px
+    }
+
+    .cart-summary {
+        text-align: left
+    }
+
+    .btn-secondary {
+        margin: 10px 0 0
+    }
+
+    .hero-art img {
+        height: 200px
+    }
+}
+
