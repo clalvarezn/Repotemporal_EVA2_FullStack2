@@ -106,7 +106,6 @@ export default function Inicio({ agregar }) {
               key={producto.id}
               producto={producto}
               onAgregar={agregar}
-              mostrarAgregar={false}
             />
           ))}
         </div>

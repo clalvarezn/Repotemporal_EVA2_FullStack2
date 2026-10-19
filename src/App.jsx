@@ -10,7 +10,8 @@ import Nosotros from './componentes/Nosotros'
 import Blogs from './componentes/Blogs'
 import Articulo from './componentes/Articulo'
 import DetalleProducto from './componentes/DetalleProducto'
-import Administracion from './componentes/Administracion'
+import Administracion from './admin/Administracion'
+import AdminLogin from './admin/AdminLogin'
 
 function leerCarrito() {
   try { return JSON.parse(localStorage.getItem('levelupCarrito') || '[]') }
@@ -49,7 +50,8 @@ export default function App() {
   else if (ruta === '/blogs') pagina = <Blogs />
   else if (segmentos[1] === 'blogs' && segmentos[2]) pagina = <Articulo id={segmentos[2]} />
   else if (segmentos[1] === 'producto' && segmentos[2]) pagina = <DetalleProducto id={segmentos[2]} agregar={agregar} />
-  else if (ruta === '/admin') pagina = <Administracion />
+  else if (ruta === '/admin') pagina = <AdminLogin />
+  else if (ruta === '/admin/dashboard') pagina = <Administracion />
   else pagina = <main className="container section"><h1>Página no encontrada</h1><a className="btn" href="/">Volver al inicio</a></main>
 
   return <><Header cantidad={cantidadCarrito} />{pagina}<Footer /></>
