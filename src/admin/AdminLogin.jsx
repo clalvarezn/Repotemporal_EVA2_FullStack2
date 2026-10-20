@@ -10,8 +10,10 @@ export default function AdminLogin() {
   function ingresar(e) {
     e.preventDefault()
     const datos = new FormData(e.currentTarget)
+    // Normaliza el correo para que espacios y mayúsculas no alteren la comparación.
     const correo = String(datos.get('correo') || '').trim().toLowerCase()
     const clave = String(datos.get('password') || '')
+    // Este acceso compara credenciales de demostración; no valida contra un servidor.
     if (correo === CORREO_ADMIN && clave === CLAVE_ADMIN) {
       sessionStorage.setItem('levelupAdminAutenticado', 'true')
       window.location.href = '/admin/dashboard'

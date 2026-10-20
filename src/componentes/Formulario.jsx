@@ -12,16 +12,19 @@ export default function Formulario({ tipo }) {
     const formulario = new FormData(evento.currentTarget)
     const correo = formulario.get('correo') || ''
 
+    // Se valida primero el dominio para detener el envío con un mensaje claro.
     if (!validarCorreo(correo)) {
       setMensaje('Correo no permitido. Usa @duoc.cl, @profesor.duoc.cl o @gmail.com.')
       setCorrecto(false)
       return
     }
+    // El RUN solo es obligatorio y se comprueba en el formulario de registro.
     if (tipo === 'registro' && !validarRUN(formulario.get('run') || '')) {
       setMensaje('El RUN ingresado no es válido.')
       setCorrecto(false)
       return
     }
+    // trim evita aceptar un comentario que contenga únicamente espacios.
     if (tipo === 'contacto' && !String(formulario.get('comentario') || '').trim()) {
       setMensaje('Ingresa un comentario.')
       setCorrecto(false)

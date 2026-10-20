@@ -3,10 +3,14 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
+      { pattern: 'test/**/*.spec.js', watched: false },
+      { pattern: 'test/**/*.spec.jsx', watched: false },
       { pattern: 'src/**/*.spec.js', watched: false },
       { pattern: 'src/**/*.spec.jsx', watched: false }
     ],
     preprocessors: {
+      'test/**/*.spec.js': ['webpack'],
+      'test/**/*.spec.jsx': ['webpack'],
       'src/**/*.spec.js': ['webpack'],
       'src/**/*.spec.jsx': ['webpack']
     },

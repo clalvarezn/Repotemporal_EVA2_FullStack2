@@ -1,10 +1,13 @@
 import { formatoPrecio } from '../data/productos'
+import { cambiarCantidadProducto } from '../utils/carrito'
 
 export default function Carrito({ carrito, setCarrito }) {
-  const cambiarCantidad = (id, cantidad) => setCarrito(actual => actual.map(producto => producto.id === id ? { ...producto, cantidad } : producto).filter(producto => producto.cantidad > 0))
+  // Centraliza los cambios de cantidad para retirar el artículo al llegar a cero.
+  const cambiarCantidad = (id, cantidad) => setCarrito(actual => cambiarCantidadProducto(actual, id, cantidad))
   const total = carrito.reduce((suma, producto) => suma + producto.precio * producto.cantidad, 0)
 
   function vaciarCarrito() {
+    // Pide confirmación para evitar borrar todos los artículos por accidente.
     if (window.confirm('¿Vaciar el carrito?')) setCarrito([])
   }
 

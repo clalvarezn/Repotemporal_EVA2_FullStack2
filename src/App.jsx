@@ -12,6 +12,7 @@ import Articulo from './componentes/Articulo'
 import DetalleProducto from './componentes/DetalleProducto'
 import Administracion from './admin/Administracion'
 import AdminLogin from './admin/AdminLogin'
+import { agregarProducto } from './utils/carrito'
 
 function leerCarrito() {
   try { return JSON.parse(localStorage.getItem('levelupCarrito') || '[]') }
@@ -26,12 +27,7 @@ export default function App() {
   }, [carrito])
 
   const agregar = producto => {
-    setCarrito(actual => {
-      const existente = actual.find(item => item.id === producto.id)
-      return existente
-        ? actual.map(item => item.id === producto.id ? { ...item, cantidad: item.cantidad + 1 } : item)
-        : [...actual, { ...producto, cantidad: 1 }]
-    })
+    setCarrito(actual => agregarProducto(actual, producto))
     window.alert(`${producto.nombre} fue añadido al carrito.`)
   }
 
